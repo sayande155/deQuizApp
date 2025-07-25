@@ -2,9 +2,10 @@
 
 ![Java](https://img.shields.io/badge/Java-24-blue)
 ![Spring Boot](https://img.shields.io/badge/SpringBoot-3.5.4-brightgreen)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Status](https://img.shields.io/badge/Status-Active-green)
 
+<!--![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Status](https://img.shields.io/badge/Status-Active-green)
+--->
 ---
 
 ## 🚀 Overview
@@ -14,7 +15,7 @@
 ---
 
 ## 📁 Project Structure
-```
+```java
 deQuizApp/
 ├── controller/
 │ └── QuestionController.java
@@ -81,3 +82,12 @@ deQuizApp/
 }
 ```
 ---
+## 🧠 Learning Outcomes
+
+- REST API development using Spring Boot
+- Layered architecture with Controller-Service-Repository
+- Integration with MySQL and Spring Data JPA
+- CRUD operations with HTTP methods (GET, POST, PUT, DELETE)
+- Exception handling with custom responses
+- Use of Lombok to simplify boilerplate code
+- Designing clean and scalable endpoint structures
