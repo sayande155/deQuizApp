@@ -81,11 +81,11 @@ src/
 
 | Method | Endpoint                          | Description                        |
 |--------|-----------------------------------|------------------------------------|
-| POST   | `/question/add-question`          | Add a new question                 |
-| GET    | `/question/all-questions`         | Get all questions                  |
-| GET    | `/question/all-questions?category=java` | Filter by category         |
-| PUT    | `/question/update-question`       | Update existing question           |
-| DELETE | `/question/delete-question/{id}`  | Delete question by ID              |
+| POST   | `/question/add`                   | Add a new question                 |
+| GET    | `/question/getall`                | Get all questions                  |
+| GET    | `/question/getall?category=java`  | Filter by category                 |
+| PUT    | `/question/update`                | Update existing question           |
+| DELETE | `/question/delete/{id}`           | Delete question by ID              |
 
 ### 📌 Quiz APIs
 
