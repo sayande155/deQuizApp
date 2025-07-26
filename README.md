@@ -2,45 +2,62 @@
 
 ![Java](https://img.shields.io/badge/Java-24-blue)
 ![Spring Boot](https://img.shields.io/badge/SpringBoot-3.5.4-brightgreen)
-
-<!--![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![MySQL](https://img.shields.io/badge/Database-MySQL-blue)
 ![Status](https://img.shields.io/badge/Status-Active-green)
---->
+
 ---
 
 ## 🚀 Overview
 
-**deQuizApp** is a RESTful API built using **Spring Boot** for managing quiz questions. It provides endpoints to **add**, **update**, **delete**, and **search** questions by category. This application uses a layered architecture with `Controller`, `Service`, `Repository`, and `Entity` classes following best practices.
+**deQuizApp** is a RESTful API backend built using **Spring Boot** to manage quiz questions and quizzes. It enables adding, updating, deleting, and filtering questions, as well as creating, fetching, submitting, and deleting quizzes dynamically.
 
 ---
 
 ## 📁 Project Structure
-```java
-deQuizApp/
-├── controller/
-│ └── QuestionController.java
-├── model/
-│ └── Question.java
-├── repository/
-│ └── QuestionRepository.java
-├── service/
-│ └── QuestionService.java
-└── resources/
-└── application.properties
+
+```plaintext
+src/
+├── main/
+│   ├── java/com/sd133/deQuizApp/
+│   │   ├── controller/
+│   │   │   ├── QuestionController.java
+│   │   │   └── QuizController.java
+│   │   ├── model/
+│   │   │   ├── Question.java
+│   │   │   ├── Quiz.java
+│   │   │   ├── QuizResponse.java
+│   │   │   └── QuestionWrapper.java
+│   │   ├── repository/
+│   │   │   ├── QuestionRepository.java
+│   │   │   └── QuizRepository.java
+│   │   ├── service/
+│   │   │   ├── QuestionService.java
+│   │   │   └── QuizService.java
+│   │   └── DeQuizAppApplication.java
+│   └── resources/
+│       └── application.properties
+
 ```
 ---
 
 ## 🧾 Features
 
-- ✅ Add a new quiz question
-- ✅ Fetch all quiz questions
-- ✅ Filter questions by category
-- ✅ Update an existing question
-- ✅ Delete a question by ID
-- 🧩 Built-in exception handling
-- ⚙️ Uses Spring Data JPA for DB operations
+### ✅ Question Module
+- Add a new quiz question
+- Fetch all questions or filter by category
+- Update an existing question
+- Delete a question by ID
+
+### 🧠 Quiz Module
+- Create quiz with random questions by category
+- Fetch quiz questions (wrapper format)
+- Submit quiz answers and get score
+- Delete a quiz by ID
+
 
 ---
+
+## 🛠️ Tech Stack
 
 ## 🛠️ Tech Stack
 
@@ -48,22 +65,37 @@ deQuizApp/
 |-----------------|--------------------------------------|
 | Java 24         | Core programming language            |
 | Spring Boot     | Main framework for REST API          |
-| Spring Web      | For building RESTful APIs            |
-| Spring Data JPA | For ORM and DB operations            |
-| MySQL           | Database (configurable)              |
-| Lombok          | Reduces boilerplate code             |
+| Spring Web      | RESTful API support                  |
+| Spring Data JPA | ORM layer for DB operations          |
+| MySQL           | Relational database                  |
+| Lombok          | Annotation-based boilerplate killer  |
+| Maven           | Project management                   |
+| IntelliJ IDEA   | Development IDE                      |
+
 
 ---
 
 ## 🧪 API Endpoints
 
-| Method | Endpoint                         | Description                        |
-|--------|----------------------------------|------------------------------------|
-| POST   | `/question/add-question`         | Add a new question                 |
-| GET    | `/question/all-questions`        | Get all questions                  |
-| GET    | `/question/all-questions?category=java` | Filter questions by category |
-| PUT    | `/question/update-question`      | Update an existing question        |
-| DELETE | `/question/delete-question/{id}` | Delete question by ID              |
+### 📌 Question APIs
+
+| Method | Endpoint                          | Description                        |
+|--------|-----------------------------------|------------------------------------|
+| POST   | `/question/add-question`          | Add a new question                 |
+| GET    | `/question/all-questions`         | Get all questions                  |
+| GET    | `/question/all-questions?category=java` | Filter by category         |
+| PUT    | `/question/update-question`       | Update existing question           |
+| DELETE | `/question/delete-question/{id}`  | Delete question by ID              |
+
+### 📌 Quiz APIs
+
+| Method | Endpoint                     | Description                              |
+|--------|------------------------------|------------------------------------------|
+| POST   | `/quiz/create`               | Create quiz by category & num of Qs      |
+| GET    | `/quiz/get/{id}`             | Get quiz questions (without answers)     |
+| POST   | `/quiz/submit/{id}`          | Submit quiz responses and get score      |
+| DELETE | `/quiz/delete/{id}`          | Delete a quiz by ID                      |
+
 
 ---
 
@@ -84,10 +116,29 @@ deQuizApp/
 ---
 ## 🧠 Learning Outcomes
 
-- REST API development using Spring Boot
-- Layered architecture with Controller-Service-Repository
-- Integration with MySQL and Spring Data JPA
-- CRUD operations with HTTP methods (GET, POST, PUT, DELETE)
-- Exception handling with custom responses
-- Use of Lombok to simplify boilerplate code
-- Designing clean and scalable endpoint structures
+- ✅ Spring Boot REST API Development
+- ✅ Layered MVC Architecture (Controller-Service-Repository)
+- ✅ Integration with MySQL using Spring Data JPA
+- ✅ Building DTOs and Wrapper models for clean API responses
+- ✅ Exception Handling with appropriate HTTP status codes
+- ✅ Quiz logic with scoring mechanism
+- ✅ Efficient random question selection using native SQL
+- ✅ Using Lombok to simplify boilerplate Java code
+
+---
+## 🧪 Future Enhancements
+
+- 🔐 Add Spring Security and JWT-based authentication
+- 👤 Implement User roles (Admin, Student)
+- 📊 Track user quiz history and scoring records
+- 🧾 Create quiz result reports/downloads
+- 🖥️ Build a frontend with React or Angular
+- 📦 Dockerize the application for easy deployment
+- 🧪 Add Unit and Integration Testing using JUnit and Mockito
+- 📜 Add Swagger/OpenAPI documentation for API testing
+
+---
+
+> Made with ❤️ by **Sayan De**  
+> GitHub: [@sayande155](https://github.com/sayande155)
+
