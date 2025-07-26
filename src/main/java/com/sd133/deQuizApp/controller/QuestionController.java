@@ -17,7 +17,7 @@ public class QuestionController {
     @Autowired
     private QuestionService questionService;
 
-    @PostMapping("add-question")
+    @PostMapping("add")
     public ResponseEntity<String> addQuestion(@RequestBody Question question) {
         Question q = questionService.addQuestion(question);
         if (q != null) {
@@ -27,7 +27,7 @@ public class QuestionController {
         }
     }
 
-    @GetMapping("all-questions")
+    @GetMapping("get/all")
     public ResponseEntity<?> getQuestionsByCategory(@RequestParam(required = false) String category) {
         List<Question> questions;
 
@@ -43,7 +43,7 @@ public class QuestionController {
         return new ResponseEntity<>(questions, HttpStatus.OK);
     }
 
-    @PutMapping("update-question")
+    @PutMapping("update")
     public ResponseEntity<String> updateQuestion(@RequestBody Question question) {
         Question q = questionService.updateQuestion(question);
         if (q != null) {
@@ -53,7 +53,7 @@ public class QuestionController {
         }
     }
 
-    @DeleteMapping("delete-question/{id}")
+    @DeleteMapping("delete/{id}")
     public ResponseEntity<String> deleteQuestionById(@PathVariable String id) {
         String msg = questionService.deleteQuestionById(id);
         if (msg.equals("Question Deleted Successfully")) {
